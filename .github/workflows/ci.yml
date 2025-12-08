@@ -27,11 +27,11 @@ jobs:
         echo "# # # # #"
         echo "Installing dev dependencies"
         python -m pip install --upgrade pip
-        pip install -r requirements-dev.txt
+        pip install -r ./starter/requirements-dev.txt
 
         echo "# # # # #"
         echo "Installing dependencies"
-        pip install -r requirements.txt
+        pip install -r ./starter/requirements.txt
         
     - name: Lint with flake8
       run: |
