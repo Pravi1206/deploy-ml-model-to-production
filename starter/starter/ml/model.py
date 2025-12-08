@@ -1,7 +1,8 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.ensemble import RandomForestClassifier
 
 
-def train_model(X_train, y_train):
+def train_model(X_train, y_train, hyperparameters):
     """
     Trains a machine learning model and returns it.
 
@@ -11,12 +12,16 @@ def train_model(X_train, y_train):
         Training data.
     y_train : np.ndarray
         Labels.
+    hyperparameters : dict
+        Dictionary containing hyperparameters for RandomForestClassifier.
     Returns
     -------
     model : RandomForestClassifier
         Trained machine learning model.
     """
-    pass
+    model = RandomForestClassifier(**hyperparameters)
+    model.fit(X_train, y_train)
+    return model
 
 
 def compute_model_metrics(y, preds):
@@ -55,4 +60,5 @@ def inference(model, X):
     preds : np.ndarray
         Predictions from the model.
     """
-    pass
+    preds = model.predict(X)
+    return preds

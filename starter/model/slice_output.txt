@@ -1,0 +1,703 @@
+Model Performance on Data Slices
+================================================================================
+
+Feature: workclass
+Value: Private
+Count: 4517
+Precision: 0.7990
+Recall: 0.5021
+F-beta: 0.6167
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Self-emp-inc
+Count: 242
+Precision: 0.8120
+Recall: 0.6985
+F-beta: 0.7510
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: ?
+Count: 354
+Precision: 0.6190
+Recall: 0.3611
+F-beta: 0.4561
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: State-gov
+Count: 258
+Precision: 0.7681
+Recall: 0.6795
+F-beta: 0.7211
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Local-gov
+Count: 430
+Precision: 0.7453
+Recall: 0.5985
+F-beta: 0.6639
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Self-emp-not-inc
+Count: 508
+Precision: 0.7928
+Recall: 0.5570
+F-beta: 0.6543
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Federal-gov
+Count: 201
+Precision: 0.8113
+Recall: 0.5119
+F-beta: 0.6277
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Without-pay
+Count: 2
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: workclass
+Value: Never-worked
+Count: 1
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: education
+Value: HS-grad
+Count: 2125
+Precision: 0.9571
+Recall: 0.1982
+F-beta: 0.3284
+--------------------------------------------------------------------------------
+Feature: education
+Value: Bachelors
+Count: 1042
+Precision: 0.7062
+Recall: 0.8163
+F-beta: 0.7573
+--------------------------------------------------------------------------------
+Feature: education
+Value: 5th-6th
+Count: 73
+Precision: 1.0000
+Recall: 0.3333
+F-beta: 0.5000
+--------------------------------------------------------------------------------
+Feature: education
+Value: Some-college
+Count: 1476
+Precision: 0.9545
+Recall: 0.2188
+F-beta: 0.3559
+--------------------------------------------------------------------------------
+Feature: education
+Value: Assoc-voc
+Count: 281
+Precision: 0.8000
+Recall: 0.2985
+F-beta: 0.4348
+--------------------------------------------------------------------------------
+Feature: education
+Value: 10th
+Count: 166
+Precision: 1.0000
+Recall: 0.0909
+F-beta: 0.1667
+--------------------------------------------------------------------------------
+Feature: education
+Value: Doctorate
+Count: 80
+Precision: 0.8710
+Recall: 0.8852
+F-beta: 0.8780
+--------------------------------------------------------------------------------
+Feature: education
+Value: 11th
+Count: 199
+Precision: 1.0000
+Recall: 0.4000
+F-beta: 0.5714
+--------------------------------------------------------------------------------
+Feature: education
+Value: 9th
+Count: 98
+Precision: 1.0000
+Recall: 0.2500
+F-beta: 0.4000
+--------------------------------------------------------------------------------
+Feature: education
+Value: 1st-4th
+Count: 42
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: education
+Value: Prof-school
+Count: 126
+Precision: 0.9062
+Recall: 0.9062
+F-beta: 0.9062
+--------------------------------------------------------------------------------
+Feature: education
+Value: 7th-8th
+Count: 118
+Precision: 1.0000
+Recall: 0.1250
+F-beta: 0.2222
+--------------------------------------------------------------------------------
+Feature: education
+Value: Masters
+Count: 361
+Precision: 0.7807
+Recall: 0.8856
+F-beta: 0.8298
+--------------------------------------------------------------------------------
+Feature: education
+Value: 12th
+Count: 91
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: education
+Value: Assoc-acdm
+Count: 227
+Precision: 0.8621
+Recall: 0.4310
+F-beta: 0.5747
+--------------------------------------------------------------------------------
+Feature: education
+Value: Preschool
+Count: 8
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Never-married
+Count: 2167
+Precision: 1.0000
+Recall: 0.3196
+F-beta: 0.4844
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Married-civ-spouse
+Count: 3039
+Precision: 0.7768
+Recall: 0.5826
+F-beta: 0.6658
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Divorced
+Count: 857
+Precision: 0.9677
+Recall: 0.2941
+F-beta: 0.4511
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Married-spouse-absent
+Count: 82
+Precision: 1.0000
+Recall: 0.1429
+F-beta: 0.2500
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Widowed
+Count: 184
+Precision: 1.0000
+Recall: 0.0625
+F-beta: 0.1176
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Separated
+Count: 178
+Precision: 1.0000
+Recall: 0.3333
+F-beta: 0.5000
+--------------------------------------------------------------------------------
+Feature: marital-status
+Value: Married-AF-spouse
+Count: 6
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Machine-op-inspct
+Count: 381
+Precision: 0.8125
+Recall: 0.2364
+F-beta: 0.3662
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Sales
+Count: 748
+Precision: 0.8406
+Recall: 0.5395
+F-beta: 0.6572
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Exec-managerial
+Count: 837
+Precision: 0.8232
+Recall: 0.6853
+F-beta: 0.7479
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: ?
+Count: 355
+Precision: 0.6190
+Recall: 0.3611
+F-beta: 0.4561
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Adm-clerical
+Count: 776
+Precision: 0.7115
+Recall: 0.3558
+F-beta: 0.4744
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Other-service
+Count: 649
+Precision: 0.7143
+Recall: 0.1562
+F-beta: 0.2564
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Protective-serv
+Count: 125
+Precision: 0.7273
+Recall: 0.3902
+F-beta: 0.5079
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Farming-fishing
+Count: 208
+Precision: 0.6000
+Recall: 0.3750
+F-beta: 0.4615
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Craft-repair
+Count: 810
+Precision: 0.7667
+Recall: 0.2722
+F-beta: 0.4017
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Prof-specialty
+Count: 822
+Precision: 0.7844
+Recall: 0.7578
+F-beta: 0.7709
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Transport-moving
+Count: 310
+Precision: 0.7778
+Recall: 0.2154
+F-beta: 0.3373
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Tech-support
+Count: 183
+Precision: 0.7241
+Recall: 0.4118
+F-beta: 0.5250
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Handlers-cleaners
+Count: 264
+Precision: 0.6000
+Recall: 0.1667
+F-beta: 0.2609
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Priv-house-serv
+Count: 43
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: occupation
+Value: Armed-Forces
+Count: 2
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Not-in-family
+Count: 1675
+Precision: 0.9815
+Recall: 0.2865
+F-beta: 0.4435
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Own-child
+Count: 1038
+Precision: 1.0000
+Recall: 0.4000
+F-beta: 0.5714
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Husband
+Count: 2664
+Precision: 0.7831
+Recall: 0.5929
+F-beta: 0.6748
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Wife
+Count: 319
+Precision: 0.7157
+Recall: 0.5177
+F-beta: 0.6008
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Other-relative
+Count: 208
+Precision: 1.0000
+Recall: 0.1818
+F-beta: 0.3077
+--------------------------------------------------------------------------------
+Feature: relationship
+Value: Unmarried
+Count: 609
+Precision: 1.0000
+Recall: 0.2432
+F-beta: 0.3913
+--------------------------------------------------------------------------------
+Feature: race
+Value: White
+Count: 5575
+Precision: 0.7890
+Recall: 0.5394
+F-beta: 0.6407
+--------------------------------------------------------------------------------
+Feature: race
+Value: Asian-Pac-Islander
+Count: 210
+Precision: 0.7551
+Recall: 0.6271
+F-beta: 0.6852
+--------------------------------------------------------------------------------
+Feature: race
+Value: Black
+Count: 604
+Precision: 0.8182
+Recall: 0.4557
+F-beta: 0.5854
+--------------------------------------------------------------------------------
+Feature: race
+Value: Amer-Indian-Eskimo
+Count: 72
+Precision: 1.0000
+Recall: 0.4000
+F-beta: 0.5714
+--------------------------------------------------------------------------------
+Feature: race
+Value: Other
+Count: 52
+Precision: 0.8333
+Recall: 0.7143
+F-beta: 0.7692
+--------------------------------------------------------------------------------
+Feature: sex
+Value: Male
+Count: 4373
+Precision: 0.7923
+Recall: 0.5593
+F-beta: 0.6557
+--------------------------------------------------------------------------------
+Feature: sex
+Value: Female
+Count: 2140
+Precision: 0.7698
+Recall: 0.4163
+F-beta: 0.5404
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: United-States
+Count: 5837
+Precision: 0.7994
+Recall: 0.5331
+F-beta: 0.6396
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: England
+Count: 21
+Precision: 0.7000
+Recall: 0.7778
+F-beta: 0.7368
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Mexico
+Count: 134
+Precision: 0.6000
+Recall: 0.6000
+F-beta: 0.6000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Vietnam
+Count: 12
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: ?
+Count: 128
+Precision: 0.6774
+Recall: 0.7000
+F-beta: 0.6885
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Poland
+Count: 18
+Precision: 0.6667
+Recall: 0.4000
+F-beta: 0.5000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Germany
+Count: 24
+Precision: 1.0000
+Recall: 0.5455
+F-beta: 0.7059
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Columbia
+Count: 8
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Philippines
+Count: 39
+Precision: 0.6667
+Recall: 0.5000
+F-beta: 0.5714
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: China
+Count: 13
+Precision: 0.6667
+Recall: 0.6667
+F-beta: 0.6667
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Puerto-Rico
+Count: 17
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Cambodia
+Count: 5
+Precision: 1.0000
+Recall: 0.3333
+F-beta: 0.5000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Japan
+Count: 12
+Precision: 0.8571
+Recall: 0.6000
+F-beta: 0.7059
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Laos
+Count: 7
+Precision: 1.0000
+Recall: 0.5000
+F-beta: 0.6667
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: El-Salvador
+Count: 17
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Ecuador
+Count: 3
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Iran
+Count: 12
+Precision: 0.6000
+Recall: 1.0000
+F-beta: 0.7500
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Dominican-Republic
+Count: 16
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Jamaica
+Count: 15
+Precision: 0.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: South
+Count: 21
+Precision: 0.7778
+Recall: 1.0000
+F-beta: 0.8750
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: India
+Count: 22
+Precision: 0.6667
+Recall: 0.6000
+F-beta: 0.6316
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Italy
+Count: 15
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Greece
+Count: 6
+Precision: 0.5000
+Recall: 1.0000
+F-beta: 0.6667
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Yugoslavia
+Count: 4
+Precision: 0.0000
+Recall: 1.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Cuba
+Count: 15
+Precision: 0.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Peru
+Count: 6
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Guatemala
+Count: 13
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Taiwan
+Count: 11
+Precision: 0.8000
+Recall: 1.0000
+F-beta: 0.8889
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Honduras
+Count: 4
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Thailand
+Count: 4
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Portugal
+Count: 7
+Precision: 1.0000
+Recall: 0.5000
+F-beta: 0.6667
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Hong
+Count: 1
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Haiti
+Count: 10
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Hungary
+Count: 2
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Canada
+Count: 20
+Precision: 0.5000
+Recall: 0.3333
+F-beta: 0.4000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Ireland
+Count: 5
+Precision: 1.0000
+Recall: 0.0000
+F-beta: 0.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Trinadad&Tobago
+Count: 3
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Scotland
+Count: 1
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: France
+Count: 4
+Precision: 1.0000
+Recall: 0.6667
+F-beta: 0.8000
+--------------------------------------------------------------------------------
+Feature: native-country
+Value: Nicaragua
+Count: 1
+Precision: 1.0000
+Recall: 1.0000
+F-beta: 1.0000
+--------------------------------------------------------------------------------
