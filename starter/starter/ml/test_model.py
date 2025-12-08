@@ -3,8 +3,7 @@ Unit tests for the model module.
 """
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from model import train_model, compute_model_metrics, inference
-
+from starter.ml.model import train_model, compute_model_metrics, inference
 
 def test_train_model():
     """Test that train_model returns a fitted RandomForestClassifier."""

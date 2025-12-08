@@ -1,51 +1,100 @@
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
 # Environment Set up
-* **Option 1: Using pip and venv (Recommended)**
-    * Ensure you have Python 3.13 installed
-    * Create virtual environment: `python3.13 -m venv .venv`
+**Using pip and venv (Recommended)**
+    * Ensure you have Python 3.8+ installed
+    * Create virtual environment: `python3 -m venv .venv`
     * Activate environment: `source .venv/bin/activate` (On Windows: `.venv\Scripts\activate`)
-    * Install dependencies: `pip install -r starter/requirements.txt`
+    * Install dependencies:
+      ```bash
+      pip install -r starter/requirements.txt
+      pip install -r starter/requirements-dev.txt  # For testing and development
+      ```
 
-* **Option 2: Using conda**
-    * Download and install conda if you don't have it already.
-    * conda create -n [envname] "python=3.13" scikit-learn pandas numpy pytest jupyter jupyterlab fastapi uvicorn pydantic httpx matplotlib seaborn -c conda-forge
-    * Install git either through conda ("conda install git") or through your CLI, e.g. sudo apt-get git.
+## Continuous Integration
 
-## Repositories
-* Create a directory for the project and initialize git.
-    * As you work on the code, continually commit changes. Trained models you want to use in production must be committed to GitHub.
-* Connect your local git repo to GitHub.
-* Setup GitHub Actions on your repo. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
-    * Make sure you set up the GitHub Action to use Python 3.13 (same version as development).
-    * Note: Add flake8 to requirements.txt if you want to use it for linting: `pip install flake8`
+The repository uses GitHub Actions for continuous integration. The workflow is configured in `.github/workflows/ci.yml` and automatically runs on every push to the `main` or `master` branch. The CI pipeline:
 
-# Data
-* Download census.csv and commit it to dvc.
-* This data is messy, try to open it in pandas and see what you get.
-* To clean it, use your favorite text editor to remove all spaces.
+1. Sets up Python 3.10 environment
+2. Installs all dependencies from `requirements.txt` and `requirements-dev.txt`
+3. Runs `flake8` for code quality checks (syntax errors and undefined names fail the build)
+4. Runs `pytest` to ensure all tests pass
 
-# Model
-* Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.
-* Write unit tests for at least 3 functions in the model code.
-* Write a function that outputs the performance of the model on slices of the data.
-    * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
-* Write a model card using the provided template.
+**All tests must pass and flake8 must complete without errors for the build to succeed.** You can view the status of CI runs in the "Actions" tab of the GitHub repository.
 
-# API Creation
-*  Create a RESTful API using FastAPI this must implement:
-    * GET on the root giving a welcome message.
-    * POST that does model inference.
-    * Type hinting must be used.
-    * Use a Pydantic model to ingest the body from POST. This model should contain an example.
-   	 * Hint: the data has names with hyphens and Python does not allow those as variable names. Do not modify the column names in the csv and instead use the functionality of FastAPI/Pydantic/etc to deal with this.
-* Write 3 unit tests to test the API (one for the GET and two for POST, one that tests each prediction).
+## Training the Model
 
-# API Deployment
-* Create a free Heroku account (for the next steps you can either use the web GUI or download the Heroku CLI).
-* Create a new app and have it deployed from your GitHub repository.
-    * Enable automatic deployments that only deploy if your continuous integration passes.
-    * Hint: think about how paths will differ in your local environment vs. on Heroku.
-    * Hint: development in Python is fast! But how fast you can iterate slows down if you rely on your CI/CD to fail before fixing an issue. I like to run flake8 locally before I commit changes.
-    * Note: Install flake8 separately if needed: `pip install flake8`
-* Write a script that uses the requests module to do one POST on your live API.
+To train the model, run the following command from the project root:
+
+```bash
+# Activate your virtual environment first
+source .venv/bin/activate  # or activate your conda environment
+
+# Run the training script
+python starter/starter/train_model.py
+```
+
+The training script will:
+1. Load and clean the census data (creates `census_clean.csv`)
+2. Split data into train/test sets (80/20 split)
+3. Process features (one-hot encode categorical, keep continuous)
+4. Train a Random Forest Classifier
+5. Evaluate on test set and print metrics (Precision, Recall, F-beta)
+6. Compute performance on data slices for each categorical feature
+7. Save model artifacts to `starter/model/`:
+   - `model.pkl` - Trained Random Forest model
+   - `encoder.pkl` - OneHotEncoder for categorical features
+   - `lb.pkl` - LabelBinarizer for target labels
+   - `slice_output.txt` - Performance metrics on data slices
+
+## Testing the Model
+
+Run all tests using pytest from the project root:
+
+```bash
+# Run all tests
+pytest -v
+
+# Run specific test files
+pytest starter/starter/ml/test_model.py -v        # Model unit tests
+pytest starter/api/test_router.py -v              # API unit tests
+
+# Run with coverage report
+pytest --cov=starter --cov-report=html
+```
+
+**Model Tests** (`test_model.py`):
+- `test_train_model()` - Verifies model training and hyperparameters
+- `test_compute_model_metrics()` - Tests metric calculations with perfect predictions
+- `test_inference()` - Tests prediction functionality and output format
+- `test_model_metrics_with_partial_accuracy()` - Tests metrics with partial accuracy
+
+**API Tests** (`test_router.py`):
+- `test_get_root()` - Tests GET endpoint returns welcome message
+- `test_post_predict_below_50k()` - Tests POST with data likely earning <=50K
+- `test_post_predict_above_50k()` - Tests POST with data likely earning >50K
+
+## Running the API
+
+To run the FastAPI application locally:
+
+```bash
+# From the project root, activate your virtual environment
+source .venv/bin/activate
+
+# Run the API server
+python starter/main.py
+```
+
+The API will start on `http://localhost:8000`. You can access:
+
+- **Root endpoint**: `http://localhost:8000/` - Welcome message
+- **Interactive API docs**: `http://localhost:8000/docs` - Swagger UI with interactive API documentation
+- **Alternative docs**: `http://localhost:8000/redoc` - ReDoc documentation
+- **Prediction endpoint**: `POST http://localhost:8000/predict` - Make income predictions
+
+The `/docs` endpoint provides an interactive interface where you can:
+- View all available endpoints
+- See request/response schemas
+- Test the API directly in your browser
+- View example requests and responses
