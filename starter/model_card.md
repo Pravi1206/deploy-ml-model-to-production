@@ -30,6 +30,18 @@ The model's performance is evaluated using three primary metrics:
 - **Recall:** Measures the proportion of actual positive cases that are correctly identified (True Positives / (True Positives + False Negatives))
 - **F-beta Score (F1):** Harmonic mean of precision and recall, providing a balanced measure of model performance
 
+**Overall Test Set Performance:**
+- Precision: 0.8218
+- Recall: 0.5608
+- F-beta: 0.6667
+
+**Slice Performance Notes:**
+The model's performance varies across different demographic slices. Notable observations from slice analysis:
+- Best performing slices include individuals with professional education (Prof-school: F-beta 0.9012, Doctorate: F-beta 0.8852)
+- Lower performance on slices with missing workclass data (F-beta 0.4615)
+- Performance varies significantly across education levels, with higher education generally showing better metrics
+- Some demographic slices show signs of class imbalance affecting recall scores
+
 ## Ethical Considerations
 
 **Bias Concerns:**
