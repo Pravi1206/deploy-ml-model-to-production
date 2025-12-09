@@ -31,7 +31,7 @@ To train the model, run the following command from the project root:
 source .venv/bin/activate  # or activate your conda environment
 
 # Run the training script
-python starter/starter/train_model.py
+python starter/train_model.py
 ```
 
 The training script will:
@@ -41,7 +41,7 @@ The training script will:
 4. Train a Random Forest Classifier
 5. Evaluate on test set and print metrics (Precision, Recall, F-beta)
 6. Compute performance on data slices for each categorical feature
-7. Save model artifacts to `starter/model/`:
+7. Save model artifacts to `model/`:
    - `model.pkl` - Trained Random Forest model
    - `encoder.pkl` - OneHotEncoder for categorical features
    - `lb.pkl` - LabelBinarizer for target labels
@@ -56,8 +56,8 @@ Run all tests using pytest from the project root:
 pytest -v
 
 # Run specific test files
-pytest starter/starter/ml/test_model.py -v        # Model unit tests
-pytest starter/api/test_router.py -v              # API unit tests
+pytest starter/ml/test_model.py -v        # Model unit tests
+pytest api/test_router.py -v              # API unit tests
 
 # Run with coverage report
 pytest --cov=starter --cov-report=html
@@ -89,7 +89,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 # Or from the project root
 cd /home/fixcfhu/repos/Pravi1206/deploy-ml-model-to-production
-uvicorn starter.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 The API will start on `http://localhost:8000`. You can access:
@@ -112,7 +112,7 @@ To test the API with a live POST request using the requests module:
 ```bash
 # Make sure the API is running first (in another terminal)
 # Then run the live POST script
-python starter/api/live_post.py
+python api/live_post.py
 ```
 
 This script will send two POST requests to the API and display:
