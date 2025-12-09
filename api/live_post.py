@@ -24,12 +24,47 @@ def post_to_api(url: str, data: dict) -> tuple:
         return None, None
 
 
+def get_from_api(url: str) -> tuple:
+    """
+    Send a GET request to the API and return the result and status code.
+    
+    Args:
+        url: API endpoint URL
+        
+    Returns:
+        tuple: (status_code, response_json)
+    """
+    try:
+        response = requests.get(url)
+        return response.status_code, response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error making request: {e}")
+        return None, None
+
+
 def main():
     """
     Main function to test the API with sample data.
     """
-    # API endpoint
-    api_url = "http://localhost:8000/predict"
+    # API endpoints
+    api_root = "https://deploy-ml-model-to-production-1.onrender.com/"  # Replace with actual URL if needed
+    api_predict = "https://deploy-ml-model-to-production-1.onrender.com/predict"  # Replace with actual URL if needed
+    
+    print("=" * 80)
+    print("Census Income Prediction API - Live Request Test")
+    print("=" * 80)
+    
+    # Test 0: GET request to root
+    print("\n[Test 0] GET Request to Root Endpoint")
+    print("-" * 80)
+    print(f"URL: {api_root}")
+    status_code, result = get_from_api(api_root)
+    
+    if status_code:
+        print(f"\nStatus Code: {status_code}")
+        print(f"Response: {json.dumps(result, indent=2)}")
+    else:
+        print("\nFailed to get response from API")
     
     # Sample data 1: Profile likely earning <=50K
     data_low_income = {
@@ -72,10 +107,11 @@ def main():
     print("=" * 80)
     
     # Test 1: Low income profile
-    print("\n[Test 1] Low Income Profile")
+    print("\n" + "=" * 80)
+    print("\n[Test 1] POST Request - Low Income Profile")
     print("-" * 80)
     print(f"Input Data: {json.dumps(data_low_income, indent=2)}")
-    status_code, result = post_to_api(api_url, data_low_income)
+    status_code, result = post_to_api(api_predict, data_low_income)
     
     if status_code:
         print(f"\nStatus Code: {status_code}")
@@ -85,10 +121,10 @@ def main():
     
     # Test 2: High income profile
     print("\n" + "=" * 80)
-    print("\n[Test 2] High Income Profile")
+    print("\n[Test 2] POST Request - High Income Profile")
     print("-" * 80)
     print(f"Input Data: {json.dumps(data_high_income, indent=2)}")
-    status_code, result = post_to_api(api_url, data_high_income)
+    status_code, result = post_to_api(api_predict, data_high_income)
     
     if status_code:
         print(f"\nStatus Code: {status_code}")
