@@ -73,17 +73,23 @@ pytest --cov=starter --cov-report=html
 - `test_get_root()` - Tests GET endpoint returns welcome message
 - `test_post_predict_below_50k()` - Tests POST with data likely earning <=50K
 - `test_post_predict_above_50k()` - Tests POST with data likely earning >50K
+- `test_post_predict_malformed_data()` - Tests error handling with malformed data
 
 ## Running the API
 
-To run the FastAPI application locally:
+To run the FastAPI application locally using uvicorn:
 
 ```bash
-# From the project root, activate your virtual environment
-source .venv/bin/activate
+# From the starter directory
+cd starter
+uvicorn main:app --host 0.0.0.0 --port 8000
 
-# Run the API server
-python starter/main.py
+# Or with auto-reload for development (automatically reloads on code changes)
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+# Or from the project root
+cd /home/fixcfhu/repos/Pravi1206/deploy-ml-model-to-production
+uvicorn starter.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 The API will start on `http://localhost:8000`. You can access:
@@ -98,3 +104,18 @@ The `/docs` endpoint provides an interactive interface where you can:
 - See request/response schemas
 - Test the API directly in your browser
 - View example requests and responses
+
+### Testing the API with a Live POST Request
+
+To test the API with a live POST request using the requests module:
+
+```bash
+# Make sure the API is running first (in another terminal)
+# Then run the live POST script
+python starter/api/live_post.py
+```
+
+This script will send two POST requests to the API and display:
+- Input data (formatted JSON)
+- HTTP status code
+- Prediction result (<=50K or >50K)
